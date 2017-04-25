@@ -9,12 +9,12 @@
 
 <html:html lang="true">
     <head>
-        <title>Search Page</title>
+        <title>Admin Search Page</title>
     </head>
     <body>
 
         Search:
-        <html:form action="/search" method="get">
+        <html:form action="/adminSearch" method="get">
             Enter the Film ID to search:
             <html:text property="filmId" size="10"/><br><br>
             Enter the Category to search:

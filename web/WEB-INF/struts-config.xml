@@ -32,9 +32,9 @@
                 type="com.myapp.struts.adminRegistrationAction">
             <forward name="success" path="/registrationSuccess.jsp" />
         </action>
-        <action input="/search.jsp" name="form" path="/search"
-                type="com.myapp.struts.searchAction">
-            <forward name="success" path="/search.jsp" />
+        <action input="/adminSearch.jsp" name="form" path="/adminSearch"
+                type="com.myapp.struts.adminSearchAction">
+            <forward name="success" path="/adminSearch.jsp" />
         </action>
     </action-mappings>
     

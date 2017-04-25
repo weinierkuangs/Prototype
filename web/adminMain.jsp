@@ -34,7 +34,7 @@
         <a href="AdminReport/checkouts.jsp"><button>Current Checkouts</button></a><br><br>
         <a href="AdminReport/inventory.jsp"><button>Inventory</button></a><br><br>
 
-        <a href="search.jsp"><button>Search</button></a><br><br>
+        <a href="adminSearch.jsp"><button>Search</button></a><br><br>
 
 
     </body>
