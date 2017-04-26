@@ -7,6 +7,8 @@
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
@@ -28,70 +30,46 @@
         </c:forEach>
 
         <a href="cart_checkout.jsp"><button>Cart/Checkout</button></a><br><br>
-        <a href="wishlist.jsp"><button>Wishlist</button></a>
+        <a href="wishList.jsp"><button>Wishlist</button></a>
 
 
-        <a href="searchMain.jsp"><button>Search</button></a><br><br>
-        <button onclick="goBack()">Go Back</button>
+        <a href="customerSearch.jsp"><button>Search</button></a><br><br>
+        <a href="customerLogin.jsp"><button>Log Out</button></a><br><br>
 
+        
         <p>Current Films to Rent</p>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
                            user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
-            SELECT DISTINCT inventory.film_id AS "From Inventory Film_ID",
-            film.film_id, 
-            film.title, 
-            film.description, 
-            film.release_year, 
-            film.rental_duration,
-            film.rental_rate,
-            film.length,
-            film.replacement_cost,
-            film.rating,
-            film.special_features,
-            film.last_update
-            FROM inventory
-            JOIN film on inventory.film_id = film.film_id
-            WHERE inventory.store_id = 1;
+            SELECT DISTINCT film.film_id as 'film_id', film.title as 'title', 
+            language.name as 'language', LEFT(film.release_year, 4) as 'release_year', 
+            film.description as 'description'
+            FROM film
+            join language on language.language_id = film.language_id
         </sql:query>
-        <table border="1" width="150%">
+        <table border="1">
             <tr>
-                <th>Film ID from Inv</th>
-                <th>Film ID from films</th>
+                <th style="display: none">film_id</th>
                 <th>Title</th>
+                <th>Language</th>
+                <th>Year</th>
                 <th>Description</th>
-                <th>Release Year</th>
-                <th>Language ID</th>
-                <th>Original Language_ID</th>
-                <th>Rental Duration</th>
-                <th>Rental Rate</th>
-                <th>Length</th>
-                <th>Replacement Cost</th>
-                <th>Rating</th>
-                <th>Special Features</th>
-                <th>Last Update</th>
                 <th colspan=2>Add to</th>
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td><c:out value="${row.film_id}"/></td>
-                    <td><c:out value="${row.film_id}"/></td>
+                    <td style="display: none"><c:out value="${row.film_id}"/></td>
                     <td><c:out value="${row.title}"/></td>
-                    <td><c:out value="${row.description}"/></td>
+                    <td><c:out value="${row.name}"/></td>
                     <td><c:out value="${row.release_year}"/></td>
-                    <td><c:out value="${row.language_id}"/></td>
-                    <td><c:out value="${row.original_language_id}"/></td>
-                    <td><c:out value="${row.rental_duration}"/></td>
-                    <td><c:out value="${row.rental_rate}"/></td>
-                    <td><c:out value="${row.length}"/></td>
-                    <td><c:out value="${row.replacement_cost}"/></td>
-                    <td><c:out value="${row.rating}"/></td>
-                    <td><c:out value="${row.special_features}"/></td>
-                    <td><c:out value="${row.last_update}"/></td>
-                    <td><a href="filmsForRentAction=edit&film_id=<c:out value="${row.film_id}"/>">Cart</a></td>
-                    <td><a href="filmsForRentAction=edit&film_id=<c:out value="${row.film_id}"/>">Wishlist</a></td>
+                    <td><c:out value="${row.description}"/></td>
+                    <td><html:form action="/addToWishList" method="get">
+                            <html:text style = "display:none;" property="customerId" size="10" value = "${sessionScope.customerId}"/>
+                            <html:text style = "display:none;" property="filmId" size="10" value = "${row.film_id}"/>
+                            <html:submit>Wish List</html:submit>
+                        </html:form></td>
                 </tr>
             </c:forEach>
         </table>

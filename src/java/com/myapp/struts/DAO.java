@@ -81,4 +81,45 @@ public class DAO {
                                 + password + "',1,1,'username')");
             con.close();
     }
+    public void customerRegistration(String email, String password, String firstName, String lastName) throws Exception {
+
+            String URL = "jdbc:mysql://localhost:3306/sakila";
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(URL, "root", "yujie-1276");
+                Statement st = con.createStatement();
+                int value = st
+                        .executeUpdate("INSERT INTO customer(First_name,Last_name,email,password,address_id,store_id)VALUES('"
+                                + firstName
+                                + "','"
+                                + lastName
+                                + "','"
+                                + email
+                                + "','"
+                                + password + "',1,1)");
+            con.close();
+    }
+    public void customerAddWishList(String filmId, String customerId) throws Exception {
+
+            String URL = "jdbc:mysql://localhost:3306/sakila";
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(URL, "root", "yujie-1276");
+                Statement st = con.createStatement();
+                int value = st
+                        .executeUpdate("INSERT INTO wish_list(customer_id,film_id)VALUES('"
+                                + customerId
+                                + "','"
+                                + filmId + "')");
+            con.close();
+    }
+    public void customerDeleteWishList(String wishListId) throws Exception {
+
+            String URL = "jdbc:mysql://localhost:3306/sakila";
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(URL, "root", "yujie-1276");
+                Statement st = con.createStatement();
+                int value = st
+                        .executeUpdate("delete from wish_list where wish_list_id = "
+                                + wishListId);
+            con.close();
+    }
 }

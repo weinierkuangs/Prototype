@@ -32,9 +32,25 @@
                 type="com.myapp.struts.adminRegistrationAction">
             <forward name="success" path="/registrationSuccess.jsp" />
         </action>
+        <action input="/customerRegistration.jsp" name="form" path="/customerRegistration"
+                type="com.myapp.struts.customerRegistrationAction">
+            <forward name="success" path="/registrationSuccess.jsp" />
+        </action>
         <action input="/adminSearch.jsp" name="form" path="/adminSearch"
                 type="com.myapp.struts.adminSearchAction">
             <forward name="success" path="/adminSearch.jsp" />
+        </action>
+        <action input="/customerSearch.jsp" name="form" path="/customerSearch"
+                type="com.myapp.struts.customerSearchAction">
+            <forward name="success" path="/customerSearch.jsp" />
+        </action>
+        <action input="/customerMain.jsp" name="form" path="/addToWishList"
+                type="com.myapp.struts.customerAddWishListAction">
+            <forward name="success" path="/wishList.jsp" />
+        </action>
+        <action input="/wishList.jsp" name="form" path="/deleteWishList"
+                type="com.myapp.struts.customerDeleteWishListAction">
+            <forward name="success" path="/wishList.jsp" />
         </action>
     </action-mappings>
     

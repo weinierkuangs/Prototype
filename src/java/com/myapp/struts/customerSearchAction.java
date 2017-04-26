@@ -15,7 +15,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-public class adminSearchAction extends Action{
+public class customerSearchAction extends Action{
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
@@ -43,11 +43,11 @@ public class adminSearchAction extends Action{
         {
             title = "%";
         }
-        ses.setAttribute("filmId", filmId);
-        ses.setAttribute("title", title);
-        ses.setAttribute("category", category);
-        ses.setAttribute("actor", actor);
-        ses.setAttribute("store", store);
+        ses.setAttribute("cFilmId", filmId);
+        ses.setAttribute("cTitle", title);
+        ses.setAttribute("cCategory", category);
+        ses.setAttribute("cActor", actor);
+        ses.setAttribute("cStore", store);
         return mapping.findForward("success");
     }
 }

@@ -9,14 +9,13 @@
 
 <html:html lang="true">
     <head>
-        <title>Admin Search Page</title>
+        <title>Customer Search Page</title>
     </head>
     <body>
 
         Search:
-        <html:form action="/adminSearch" method="get">
-            Enter the Film ID to search:
-            <html:text property="filmId" size="10"/><br><br>
+        <html:form action="/customerSearch" method="get">
+            <html:text style="display: none" property="filmId" size="10"/>
             Enter the Title to search:
             <html:text property="title" size="20"/><br><br>
             Enter the Category to search:
@@ -27,7 +26,9 @@
                 <br><br>
         </html:form>
 
+
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
+
 
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
@@ -41,28 +42,34 @@
             inner join category on category.category_id = film_category.category_id
             inner join film_actor on film_actor.film_id = film.film_id
             inner join actor on actor.actor_id = film_actor.actor_id
-            where category.`name` like '<%=session.getAttribute("category")%>' 
-            and actor.first_name like '<%=session.getAttribute("actor")%>' 
-            and film.film_id like '<%=session.getAttribute("filmId")%>' 
-            and film.title like '<%=session.getAttribute("title")%>' 
+            where category.`name` like '<%=session.getAttribute("cCategory")%>' 
+            and actor.first_name like '<%=session.getAttribute("cActor")%>' 
+            and film.film_id like '%' 
+            and film.title like '<%=session.getAttribute("cTitle")%>' 
             group by film_id
             order by film.title asc
         </sql:query>
-        <table border="1" width="100%">
+        <table border="1">
             <tr>
-                <th>Film ID</th>
+                <th style = "display:none;" >Film ID</th>
                 <th>Title</th>
                 <th>Category</th>
                 <th>Actor</th>
                 <th>Description</th>
+                <th colspan=2>Add to</th>
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td><c:out value="${row.film_id}"/></td>
+                    <td style = "display:none;" ><c:out value="${row.film_id}"/></td>
                     <td><c:out value="${row.title}"/></td>
                     <td><c:out value="${row.name}"/></td>
                     <td><c:out value="${row.first_name}"/></td>
                     <td><c:out value="${row.description}"/></td>
+                    <td><html:form action="/addToWishList" method="get">
+                            <html:text style = "display:none;" property="customerId" value = "${sessionScope.customerId}"/>
+                            <html:text style = "display:none;" property="filmId" value = "${row.film_id}"/>
+                            <html:submit>Wish List</html:submit>
+                        </html:form></td>
                 </tr>
             </c:forEach>
         </table>

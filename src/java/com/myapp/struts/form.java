@@ -14,6 +14,8 @@ import org.apache.struts.action.ActionForm;
 public class form extends ActionForm{
     String customerEmail;
     String customerPassword;
+    String customerFirstName;
+    String customerLastName;
     String adminEmail;
     String adminPassword;
     String adminFirstName;
@@ -22,6 +24,49 @@ public class form extends ActionForm{
     String category;
     String actor;
     String store;
+    String title;
+    String customerId;
+    String wishListId;
+
+    public String getWishListId() {
+        return wishListId;
+    }
+
+    public void setWishListId(String wishListId) {
+        this.wishListId = wishListId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCustomerFirstName() {
+        return customerFirstName;
+    }
+
+    public void setCustomerFirstName(String customerFirstName) {
+        this.customerFirstName = customerFirstName;
+    }
+
+    public String getCustomerLastName() {
+        return customerLastName;
+    }
+
+    public void setCustomerLastName(String customerLastName) {
+        this.customerLastName = customerLastName;
+    }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
 
     public String getFilmId() {
         return filmId;

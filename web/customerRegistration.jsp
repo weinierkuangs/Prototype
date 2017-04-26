@@ -8,22 +8,26 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Customer Login</title>
+        <title>New Customer Registration</title>
     </head>
     <body>
-        Customer Login: <br><br>
+        New Customer <br><br>
         <html:html>
-            <html:form action="/customerLogin" method="get">
-                Enter your Email Address:
+            <html:form action="/customerRegistration.jsp" method="get">
+                Enter your First Name:
+                <html:text property="customerFirstName" value=""/><br><br>
+                Enter your Last Name:
+                <html:text property="customerLastName" value=""/><br><br>
+                Enter your Email:
                 <html:text property="customerEmail" value=""/><br><br>
                 Enter your Password:
                 <html:text property="customerPassword" value=""/><br><br>
-                <html:submit>Login</html:submit>
+                
+                <html:submit>Register</html:submit>
                     <br><br>
             </html:form>
         </html:html>
-        <a href="customerRegistration.jsp"><button>Register</button></a><br><br>
-        <a href="adminLogin.jsp"><button>Go To Admin Login</button></a>
-        
+        <a href="customerLogin.jsp"><button>Go To Customer Login</button></a>
+
     </body>
 </html:html>

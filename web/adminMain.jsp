@@ -35,6 +35,8 @@
         <a href="AdminReport/inventory.jsp"><button>Inventory</button></a><br><br>
 
         <a href="adminSearch.jsp"><button>Search</button></a><br><br>
+        
+        <a href="adminLogin.jsp"><button>Log Out</button></a><br><br>
 
 
     </body>
