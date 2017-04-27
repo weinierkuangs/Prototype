@@ -29,8 +29,9 @@
             <h1>Welcome back ${row.first_name} ${row.last_name}!</h1>
         </c:forEach>
 
-        <a href="cart_checkout.jsp"><button>Cart/Checkout</button></a><br><br>
         <a href="wishList.jsp"><button>Wishlist</button></a>
+        <a href="customerRentals.jsp"><button>Your Rental History</button></a>
+        <a href="checkOut.jsp"><button>Check Out Cart</button></a><br><br>
 
 
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
@@ -69,6 +70,11 @@
                             <html:text style = "display:none;" property="customerId" size="10" value = "${sessionScope.customerId}"/>
                             <html:text style = "display:none;" property="filmId" size="10" value = "${row.film_id}"/>
                             <html:submit>Wish List</html:submit>
+                        </html:form></td>
+                    <td><html:form action="/addToCheckOut" method="get">
+                            <html:text style = "display:none;" property="customerId" size="10" value = "${sessionScope.customerId}"/>
+                            <html:text style = "display:none;" property="filmId" size="10" value = "${row.film_id}"/>
+                            <html:submit>Check Out Cart</html:submit>
                         </html:form></td>
                 </tr>
             </c:forEach>

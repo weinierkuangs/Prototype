@@ -52,6 +52,19 @@
                 type="com.myapp.struts.customerDeleteWishListAction">
             <forward name="success" path="/wishList.jsp" />
         </action>
+        <action input="/wishList.jsp" name="form" path="/addToCheckOut"
+                type="com.myapp.struts.addToCheckOutAction">
+            <forward name="success" path="/checkOut.jsp" />
+            <forward name="failure" path="/checkOutFailure.jsp" />
+        </action>
+        <action input="/checkOut.jsp" name="form" path="/deleteCheckOutCart"
+                type="com.myapp.struts.deleteCheckOutAction">
+            <forward name="success" path="/checkOut.jsp" />
+        </action>
+        <action  name="form" path="/checkOut"
+                type="com.myapp.struts.checkOutAction">
+            <forward name="success" path="/checkOut.jsp" />
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

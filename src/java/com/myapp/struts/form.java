@@ -27,6 +27,15 @@ public class form extends ActionForm{
     String title;
     String customerId;
     String wishListId;
+    String checkOutId;
+
+    public String getCheckOutId() {
+        return checkOutId;
+    }
+
+    public void setCheckOutId(String checkOutId) {
+        this.checkOutId = checkOutId;
+    }
 
     public String getWishListId() {
         return wishListId;

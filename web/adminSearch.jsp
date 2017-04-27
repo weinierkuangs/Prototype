@@ -27,7 +27,7 @@
                 <br><br>
         </html:form>
 
-        <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
+        <a href="adminMain.jsp"><button>Go Back</button></a><br><br>
 
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
