@@ -14,20 +14,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Admin Main Page</title>
     </head>
     <body>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from staff where staff_id = <%=session.getAttribute("staffId")%>
         </sql:query>
         <c:forEach var="row" items="${result.rows}">
             <h1>Welcome back ${row.first_name} ${row.last_name}!</h1>
         </c:forEach>
-           
-        Reports:<br><br>
+            <br></br>
+            <h2>Reports:</h2>
         <a href="AdminReport/customerInformation.jsp"><button>Customer Information</button></a><br><br>
         <a href="AdminReport/mostPopularCategories.jsp"><button>Most Popular Categories</button></a><br><br>
         <a href="AdminReport/revenue.jsp"><button>Revenue</button></a><br><br>

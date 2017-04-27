@@ -9,11 +9,12 @@
 
 <html:html lang="true">
     <head>
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Admin Search Page</title>
     </head>
     <body>
 
-        Search:
+        <h1>Search:</h1>
         <html:form action="/adminSearch" method="get">
             Enter the Film ID to search:
             <html:text property="filmId" size="10"/><br><br>
@@ -32,7 +33,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description
@@ -48,7 +49,7 @@
             group by film_id
             order by film.title asc
         </sql:query>
-        <table border="1" width="100%">
+        <table border="0" width="100%">
             <tr>
                 <th>Film ID</th>
                 <th>Title</th>

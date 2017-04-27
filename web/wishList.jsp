@@ -24,7 +24,7 @@
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT wish_list.wish_list_id, film.title, wish_list.last_update as 'Time Added'FROM wish_list 
@@ -32,7 +32,7 @@
             where customer_id = <%=session.getAttribute("customerId")%>
 
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th style="display: none">film_id</th>
                 <th style="display: none">wish_list_id</th>

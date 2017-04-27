@@ -10,14 +10,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>Inventory</title>
     </head>
     <body>
-        <p>Current Store Inventory</p>
+        <h1>Current Store Inventory</h1>
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="yujie-1276" />
+                           user="root" password="root" />
         <sql:query dataSource="${snapshot}" var="result">
             SELECT f.title, count(distinct i.inventory_id) as 'Total_Inventory', count(distinct r.rental_id) as 'Number_Rents'
             FROM inventory as i
@@ -28,7 +29,7 @@
             WHERE r.return_date IS NOT NULL
             GROUP BY f.film_id, f.title
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th>Film Title</th>
                 <th>Total Inventory</th>
@@ -36,9 +37,9 @@
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <th><c:out value="${row.title}"/></th>   
-                    <th><c:out value="${row.Total_Inventory}"/></th>
-                    <th><c:out value="${row.Number_Rents}"/></th>
+                    <td><c:out value="${row.title}"/></td>   
+                    <td><c:out value="${row.Total_Inventory}"/></td>
+                    <td><c:out value="${row.Number_Rents}"/></td>
                 </tr>
             </c:forEach>
         </table>

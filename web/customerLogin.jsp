@@ -8,10 +8,13 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Customer Login</title>
     </head>
     <body>
-        Customer Login: <br><br>
+        <div>
+        <h1>Customer Login:</h1>
+        <br><br>
         <html:html>
             <html:form action="/customerLogin" method="get">
                 Enter your Email Address:
@@ -24,6 +27,6 @@
         </html:html>
         <a href="customerRegistration.jsp"><button>Register</button></a><br><br>
         <a href="adminLogin.jsp"><button>Go To Admin Login</button></a>
-        
+        </div>
     </body>
 </html:html>

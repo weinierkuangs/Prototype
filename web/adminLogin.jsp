@@ -8,10 +8,12 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Admin Login</title>
     </head>
     <body>
-        Admin Login: <br><br>
+        <h1>Admin Login</h1>
+        <br><br>
         <html:html>
             <html:form action="/adminLogin.jsp" method="get">
                 Enter your Email Address:

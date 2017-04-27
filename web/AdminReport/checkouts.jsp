@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>Current Store Checkouts (both stores)</title>
     </head>
     <body>
@@ -17,7 +18,7 @@
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="yujie-1276" />
+                           user="root" password="root" />
         <sql:query dataSource="${snapshot}" var="result">
             SELECT f.title, c.first_name, c.last_name, c.email, f.rental_rate, f.replacement_cost, i.store_id 
             FROM rental as r
@@ -30,7 +31,7 @@
             WHERE return_date IS NULL 
             GROUP BY i.store_id, c.last_name, f.title, c.first_name, c.email, f.rental_rate, f.replacement_cost
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th>Film Title</th>
                 <th>Customer First Name</th>
@@ -42,13 +43,13 @@
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <th><c:out value="${row.title}"/></th>   
-                    <th><c:out value="${row.first_name}"/></th>
-                    <th><c:out value="${row.last_name}"/></th>
-                    <th><c:out value="${row.email}"/></th>
-                    <th><c:out value="${row.rental_rate}"/></th>
-                    <th><c:out value="${row.replacement_cost}"/></th>
-                    <th><c:out value="${row.store_id}"/></th>
+                    <td><c:out value="${row.title}"/></td>   
+                    <td><c:out value="${row.first_name}"/></td>
+                    <td><c:out value="${row.last_name}"/></td>
+                    <td><c:out value="${row.email}"/></td>
+                    <td><c:out value="${row.rental_rate}"/></td>
+                    <td><c:out value="${row.replacement_cost}"/></td>
+                    <td><c:out value="${row.store_id}"/></td>
                 </tr>
             </c:forEach>
         </table>

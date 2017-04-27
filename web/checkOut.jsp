@@ -10,12 +10,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Check Out Cart</title>
     </head>
     <body>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from customer where customer_id = <%=session.getAttribute("customerId")%>
         </sql:query>
@@ -27,7 +28,7 @@
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             Select check_out.check_out_id, film.title
@@ -36,7 +37,7 @@
             join film on film.film_id = inventory.film_id
 
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th style="display: none">check_out_id</th>
                 <th>Title</th>

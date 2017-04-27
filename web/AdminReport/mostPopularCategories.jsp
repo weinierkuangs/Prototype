@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>Most Popular Categories</title>
     </head>
     <body>
@@ -17,7 +18,7 @@
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="yujie-1276" />
+                           user="root" password="root" />
         <sql:query dataSource="${snapshot}" var="result">
             SELECT c.name, count(distinct r.rental_id) as 'Number_Rents'
             FROM inventory as i
@@ -33,15 +34,15 @@
             GROUP BY c.name
             ORDER BY count(distinct r.rental_id) DESC
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th>Category</th>
                 <th>Total Rentals to Date</th>
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <th><c:out value="${row.name}"/></th>   
-                    <th><c:out value="${row.Number_Rents}"/></th>
+                    <td><c:out value="${row.name}"/></td>   
+                    <td><c:out value="${row.Number_Rents}"/></td>
                 </tr>
             </c:forEach>
         </table>

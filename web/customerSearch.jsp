@@ -9,6 +9,7 @@
 
 <html:html lang="true">
     <head>
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Customer Search Page</title>
     </head>
     <body>
@@ -33,7 +34,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description
@@ -49,7 +50,7 @@
             group by film_id
             order by film.title asc
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th style = "display:none;" >Film ID</th>
                 <th>Title</th>

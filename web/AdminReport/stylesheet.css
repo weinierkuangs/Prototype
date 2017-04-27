@@ -1,0 +1,138 @@
+body {
+   font-family: "palatino linotype", palatino, serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-align: left;   
+   line-height: 20px;
+   padding: 50px;
+   color: #FFFFFF;
+   background: #484043 url(http://i.imgur.com/oj7XiDI.jpg) repeat bottom right; 
+   width: 650px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 38px;
+    letter-spacing: 1px;
+    color: #D23641;
+    font-weight: bold;
+    width: 100%;
+}
+
+h2 {
+   text-align: left;
+   letter-spacing: 1px;
+   font-size: 18px;
+   color: #D23641;
+   font-weight: normal;
+   width: 100%;
+}
+
+table {
+   width: 100%;
+   padding: 10px;
+   background-color: #5a5053;
+   font-family: "palatino linotype", palatino, serif;
+   font-style: normal;
+   border-collapse: collapse;
+}
+
+tr:nth-child(even) 
+{
+    background-color: #6E6568
+}
+
+th {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #D23641;
+    padding: 20px;
+    color: #EAD3A8;
+    height: 50px;
+    text-align: center;
+    vertical-align: central;
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    font-weight: normal;
+    font-size: 12px;
+    padding: 10px;
+   text-align: center;
+   vertical-align: central;
+   border-bottom: 1px solid #ddd;
+}
+
+a {
+  color: #be7429;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+  text-decoration: underline;
+}
+
+a:visited { 
+    font-weight: bold; 
+    text-decoration: none; 
+}
+
+.popupBox {
+  position: absolute;
+  top: 170px;
+  left: 140px;
+}
+
+.popupCell {
+   background-color: #fffafa;
+}
+
+.popupCell:hover {
+  background-color: #f5ebe9;
+}
+
+.popupItem {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+input[type=text] {
+    font-family: "palatino linotype", palatino, serif;
+    font-size: 16px;
+    border: none;
+    color: black;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #D23641; 
+    font-family: "palatino linotype", palatino, serif;
+    font-size: 16px;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button {
+    background-color: #D23641; 
+    font-family: "palatino linotype", palatino, serif;
+    font-size: 16px;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}

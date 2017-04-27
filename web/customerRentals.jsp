@@ -17,12 +17,13 @@
     <html>
         <head>
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
             <title>Your Rentals</title>
         </head>
         <body>
             <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                                url="jdbc:mysql://localhost:3306/sakila"
-                               user="root"  password="yujie-1276"/>
+                               user="root"  password="root"/>
             <sql:query dataSource="${snapshot}" var="result">
                 SELECT * from customer where customer_id = <%=session.getAttribute("customerId")%>
             </sql:query>
@@ -41,7 +42,7 @@
                 join film on film.film_id=inventory.film_id
                 where rental.customer_id = <%=session.getAttribute("customerId")%>
             </sql:query>
-            <table border="1">
+            <table border="0">
                 <tr>
                     <th>Stock ID</th>
                     <th>Title</th>
@@ -76,7 +77,7 @@
                 join film on film.film_id=inventory.film_id
                 where rental.customer_id = <%=session.getAttribute("customerId")%>
             </sql:query>
-            <table border="1">
+            <table border="0">
                 <tr>
                     <th>Total Due</th>
                 </tr>

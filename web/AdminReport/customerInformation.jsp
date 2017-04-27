@@ -10,6 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
         <title>Customer Information (Active)</title>
     </head>
     <body>
@@ -17,7 +18,7 @@
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="yujie-1276" />
+                           user="root" password="root" />
         <sql:query dataSource="${snapshot}" var="result">
             SELECT c.first_name, c.last_name, c.email, a.phone, a.address, city.city, a.district, a.postal_code, country.country, c.store_id
             FROM customer as c
@@ -30,7 +31,7 @@
             WHERE active is true
             GROUP BY c.store_id, c.last_name, c.customer_id
         </sql:query>
-        <table border="1">
+        <table border="0">
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
@@ -45,16 +46,16 @@
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <th><c:out value="${row.first_name}"/></th>   
-                    <th><c:out value="${row.last_name}"/></th>
-                    <th><c:out value="${row.email}"/></th>
-                    <th><c:out value="${row.phone}"/></th>
-                    <th><c:out value="${row.address}"/></th>
-                    <th><c:out value="${row.city}"/></th>
-                    <th><c:out value="${row.district}"/></th>
-                    <th><c:out value="${row.postal_code}"/></th>
-                    <th><c:out value="${row.country}"/></th>
-                    <th><c:out value="${row.store_id}"/></th>
+                    <td><c:out value="${row.first_name}"/></td>   
+                    <td><c:out value="${row.last_name}"/></td>
+                    <td><c:out value="${row.email}"/></td>
+                    <td><c:out value="${row.phone}"/></td>
+                    <td><c:out value="${row.address}"/></td>
+                    <td><c:out value="${row.city}"/></td>
+                    <td><c:out value="${row.district}"/></td>
+                    <td><c:out value="${row.postal_code}"/></td>
+                    <td><c:out value="${row.country}"/></td>
+                    <td><c:out value="${row.store_id}"/></td>
                 </tr>
             </c:forEach>
         </table>    

@@ -27,7 +27,7 @@ public class DAO {
             ResultSet rs = null;
             String URL = "jdbc:mysql://localhost:3306/sakila";
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(URL, "root", "yujie-1276");
+            con = DriverManager.getConnection(URL, "root", "root");
             PreparedStatement ps = con.prepareStatement("select * from customer where email=? and password=?");
             ps.setString(1, email);
             ps.setString(2, password);
@@ -52,7 +52,7 @@ public class DAO {
             ResultSet rs = null;
             String URL = "jdbc:mysql://localhost:3306/sakila";
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(URL, "root", "yujie-1276");
+            con = DriverManager.getConnection(URL, "root", "root");
             PreparedStatement ps = con.prepareStatement("select * from staff where email=? and password=?");
             ps.setString(1, email);
             ps.setString(2, password);
@@ -71,7 +71,7 @@ public class DAO {
 
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         Statement st = con.createStatement();
         int value = st
                 .executeUpdate("INSERT INTO staff(First_name,Last_name,email,password,address_id,store_id,username)VALUES('"
@@ -89,7 +89,7 @@ public class DAO {
 
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         Statement st = con.createStatement();
         int value = st
                 .executeUpdate("INSERT INTO customer(First_name,Last_name,email,password,address_id,store_id)VALUES('"
@@ -107,7 +107,7 @@ public class DAO {
 
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         Statement st = con.createStatement();
         int value = st
                 .executeUpdate("INSERT INTO wish_list(customer_id,film_id)VALUES('"
@@ -121,7 +121,7 @@ public class DAO {
 
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         Statement st = con.createStatement();
         int value = st
                 .executeUpdate("delete from wish_list where wish_list_id = "
@@ -133,7 +133,7 @@ public class DAO {
 
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         Statement st = con.createStatement();
         int value = st
                 .executeUpdate("delete from check_out where check_out_id = "
@@ -147,7 +147,7 @@ public class DAO {
         ResultSet rs = null;
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         PreparedStatement ps = con.prepareStatement("select *\n"
                 + "from(\n"
                 + "SELECT distinct rental.inventory_id, \n"
@@ -180,7 +180,7 @@ public class DAO {
         ResultSet rs = null;
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         PreparedStatement ps = con.prepareStatement("select count(*) from check_out");
         rs = ps.executeQuery();
         if (rs.next()) {
@@ -202,7 +202,7 @@ public class DAO {
 
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        con = DriverManager.getConnection(URL, "root", "root");
         Statement st = con.createStatement();
         int value = st
                 .executeUpdate("insert rental (rental.inventory_id, customer_id,staff_id) \n"

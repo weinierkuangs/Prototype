@@ -8,10 +8,12 @@
 <html:html lang="true">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>New Customer Registration</title>
     </head>
     <body>
-        New Customer <br><br>
+        <br><br>
+        <h1>New Customer</h1>
         <html:html>
             <html:form action="/customerRegistration.jsp" method="get">
                 Enter your First Name:
