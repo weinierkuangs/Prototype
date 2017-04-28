@@ -63,7 +63,7 @@
         </action>
         <action  name="form" path="/checkOut"
                 type="com.myapp.struts.checkOutAction">
-            <forward name="success" path="/checkOut.jsp" />
+            <forward name="success" path="/checkOutSuccess.jsp" />
         </action>
     </action-mappings>
     

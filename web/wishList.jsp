@@ -24,10 +24,10 @@
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
-            SELECT wish_list.wish_list_id, film.title, wish_list.last_update as 'Time Added'FROM wish_list 
+            SELECT film.film_id,wish_list.wish_list_id, film.title, wish_list.last_update as 'Time Added'FROM wish_list
             join film on film.film_id = wish_list.film_id
             where customer_id = <%=session.getAttribute("customerId")%>
 
@@ -49,6 +49,11 @@
                     <td><html:form action="/deleteWishList" method="get">
                             <html:text style = "display:none;" property="wishListId" size="10" value = "${row.wish_list_id}"/>
                             <html:submit>Delete</html:submit>
+                        </html:form></td>
+                    <td><html:form action="/addToCheckOut" method="get">
+                            <html:text style = "display:none;" property="customerId" size="10" value = "${sessionScope.customerId}"/>
+                            <html:text style = "display:none;" property="filmId" size="10" value = "${row.film_id}"/>
+                            <html:submit>Check Out Cart</html:submit>
                         </html:form></td>
                 </tr>
             </c:forEach>

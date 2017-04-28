@@ -34,7 +34,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description
@@ -70,6 +70,11 @@
                             <html:text style = "display:none;" property="customerId" value = "${sessionScope.customerId}"/>
                             <html:text style = "display:none;" property="filmId" value = "${row.film_id}"/>
                             <html:submit>Wish List</html:submit>
+                        </html:form></td>
+                    <td><html:form action="/addToCheckOut" method="get">
+                            <html:text style = "display:none;" property="customerId" size="10" value = "${sessionScope.customerId}"/>
+                            <html:text style = "display:none;" property="filmId" size="10" value = "${row.film_id}"/>
+                            <html:submit>Check Out Cart</html:submit>
                         </html:form></td>
                 </tr>
             </c:forEach>

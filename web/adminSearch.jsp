@@ -33,7 +33,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description

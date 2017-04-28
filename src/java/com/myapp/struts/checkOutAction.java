@@ -29,6 +29,6 @@ public class checkOutAction extends Action {
 
         dao.checkOut();
 
-        return mapping.findForward("failure");
+        return mapping.findForward("success");
     }
 }

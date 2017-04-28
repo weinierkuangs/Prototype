@@ -22,7 +22,7 @@
     <body>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from customer where customer_id = <%=session.getAttribute("customerId")%>
         </sql:query>
@@ -42,7 +42,7 @@
         <h1>Current Films to Rent</h1>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT DISTINCT film.film_id as 'film_id', film.title as 'title', 
