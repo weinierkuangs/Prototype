@@ -28,6 +28,15 @@ public class form extends ActionForm{
     String customerId;
     String wishListId;
     String checkOutId;
+    String rentalId;
+
+    public String getRentalId() {
+        return rentalId;
+    }
+
+    public void setRentalId(String rentalId) {
+        this.rentalId = rentalId;
+    }
 
     public String getCheckOutId() {
         return checkOutId;

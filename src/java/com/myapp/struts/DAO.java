@@ -174,28 +174,43 @@ public class DAO {
         return inventory_id;
     }
 
-    public int checkOutValidation(String filmId) throws Exception {
+    public int checkOutValidation(String filmId, String customerId) throws Exception {
 
-        int entry = 0;
+        int error = 0; //Error Code: Same movie in cart=1; More than 5 movies in cart =2; More than 5 movies not returned=3
         ResultSet rs = null;
         String URL = "jdbc:mysql://localhost:3306/sakila";
         Class.forName("com.mysql.jdbc.Driver");
         con = DriverManager.getConnection(URL, "root", "yujie-1276");
-        PreparedStatement ps = con.prepareStatement("select count(*) from check_out");
+        PreparedStatement ps = con.prepareStatement("select count(*)\n"
+                + "from rental\n"
+                + "where return_date is null and customer_id = " + customerId);
         rs = ps.executeQuery();
         if (rs.next()) {
-            entry = rs.getInt("count(*)");
+            if (rs.getInt("count(*)") >= 5) {
+                error = 3;
+            }
         }
         ResultSet rs1 = null;
-        PreparedStatement ps1 = con.prepareStatement("select count(*) from check_out \n"
+        PreparedStatement ps1 = con.prepareStatement("select count(*) from check_out");
+        rs1 = ps1.executeQuery();
+        if (rs1.next()) {
+            if (rs1.getInt("count(*)") >= 5) {
+                error = 2;
+            }
+        }
+        ResultSet rs2 = null;
+        PreparedStatement ps2 = con.prepareStatement("select count(*) from check_out \n"
                 + "join inventory on inventory.inventory_id = check_out.inventory_id\n"
                 + "where film_id = " + filmId);
-        rs1 = ps1.executeQuery();
-        if (rs1.next() && rs1.getInt("count(*)") >= 1) {
-            entry = 6;
+        rs2 = ps2.executeQuery();
+        if (rs2.next()) {
+            if (rs2.getInt("count(*)") >= 1) {
+                error = 1;
+            }
         }
+
         con.close();
-        return entry;
+        return error;
     }
 
     public void checkOut() throws Exception {
@@ -208,6 +223,17 @@ public class DAO {
                 .executeUpdate("insert rental (rental.inventory_id, customer_id,staff_id) \n"
                         + "select check_out.inventory_id,check_out.customer_id,check_out.staff_id from check_out\n"
                         + "");
+        con.close();
+    }
+
+    public void returnMovie(String rentalId) throws Exception {
+
+        String URL = "jdbc:mysql://localhost:3306/sakila";
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        Statement st = con.createStatement();
+        int value = st
+                .executeUpdate("update rental set return_date = NOW() where rental_id =" + rentalId);
         con.close();
     }
 }

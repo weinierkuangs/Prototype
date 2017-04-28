@@ -5,6 +5,9 @@
  */
 package com.myapp.struts;
 
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -31,14 +34,22 @@ public class addToCheckOutAction extends Action {
 
         DAO dao = new DAO();
 
-        if (dao.checkOutValidation(filmId) < 5) {
-            if (dao.addToCheckOut(filmId, customerId) != 0) {
-                return mapping.findForward("success");
-            } else {
-                return mapping.findForward("failure");
-            }
-        } else {
+        if (dao.checkOutValidation(filmId, customerId) == 3) {
+            ses.setAttribute("errorId", dao.checkOutValidation(filmId, customerId));
             return mapping.findForward("failure");
+        } else {
+            if (dao.checkOutValidation(filmId, customerId) == 2) {
+                ses.setAttribute("errorId", dao.checkOutValidation(filmId, customerId));
+                return mapping.findForward("failure");
+            } else {
+                if (dao.checkOutValidation(filmId, customerId) == 1) {
+                    ses.setAttribute("errorId", dao.checkOutValidation(filmId, customerId));
+                    return mapping.findForward("failure");
+                } else {
+                    dao.addToCheckOut(filmId, customerId);
+                    return mapping.findForward("success");
+                }
+            }
         }
     }
 }

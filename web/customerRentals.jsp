@@ -33,7 +33,7 @@
 
             <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
             <sql:query dataSource="${snapshot}" var="result">
-                select inventory.inventory_id,film.title,film.rental_duration,rental.rental_date,rental.return_date,film.rental_rate,
+                select rental.rental_id, inventory.inventory_id,film.title,film.rental_duration,rental.rental_date,rental.return_date,film.rental_rate,
                 DATEDIFF(return_date,rental_date) as diff, 
                 rental_rate*DATEDIFF(return_date,rental_date) as normal_fee,
                 case when DATEDIFF(return_date,rental_date)<=rental_duration then 0 else DATEDIFF(return_date,rental_date)- rental_duration end *0.2*rental_rate as penalties
@@ -44,6 +44,7 @@
             </sql:query>
             <table border="0">
                 <tr>
+                    <th>Rental ID</th>
                     <th>Stock ID</th>
                     <th>Title</th>
                     <th>Rental Time</th>
@@ -53,9 +54,11 @@
                     <th>Days Rented</th>
                     <th>Normal Fee</th>
                     <th>Penalties</th>
+                    <th>Action</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                     <tr>
+                        <td><c:out value="${row.rental_id}"/></td>
                         <td><c:out value="${row.inventory_id}"/></td>
                         <td><c:out value="${row.title}"/></td>
                         <td><c:out value="${row.rental_date}"/></td>
@@ -65,6 +68,10 @@
                         <td><c:out value="${row.diff}"/></td>
                         <td><c:out value="${row.normal_fee}"/></td>
                         <td><c:out value="${row.penalties}"/></td>
+                        <td><html:form action="/returnMovie" method="get">
+                                <html:text style = "display:none;" property="rentalId" size="10" value = "${row.rental_id}"/>
+                                <html:submit>Return This Movie</html:submit>
+                            </html:form></td>
                     </tr>
                 </c:forEach>
             </table>

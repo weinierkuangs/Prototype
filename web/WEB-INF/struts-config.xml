@@ -65,6 +65,10 @@
                 type="com.myapp.struts.checkOutAction">
             <forward name="success" path="/checkOutSuccess.jsp" />
         </action>
+        <action  name="form" path="/returnMovie"
+                type="com.myapp.struts.returnMovieAction">
+            <forward name="success" path="/customerRentals.jsp" />
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

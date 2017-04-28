@@ -1,23 +1,31 @@
 <%-- 
-    Document   : checkOutFailure
-    Created on : Apr 27, 2017, 12:12:35 AM
+    Document   : customerMain
+    Created on : Apr 23, 2017, 1:21:03 AM
     Author     : jyu43
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="true" %>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
         <title>Error</title>
     </head>
     <body>
         <h1>
             Errors:<br><br>
-            - The Movie is Currently Out of Stock<br><br>
-            - Your Cart has Reached its Max Capacity (5)<br><br>
-            - The Movie has been already In Your Cart<br><br>
         </h1>
+        <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/sakila"
+                           user="root"  password="yujie-1276"/>
+        <sql:query dataSource="${snapshot}" var="result">
+            SELECT * from error_msg where error_id = <%=session.getAttribute("errorId")%>
+        </sql:query>
+        <c:forEach var="row" items="${result.rows}">
+            <h1>${row.error_msg}</h1>
+        </c:forEach>
     </body>
 </html>
