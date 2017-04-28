@@ -12,6 +12,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
         <title>Error</title>
     </head>
     <body>
