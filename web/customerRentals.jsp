@@ -94,5 +94,6 @@
                     </tr>
                 </c:forEach>
             </table>
+            <a href="payment.jsp"><button>Pay Now</button></a><br><br>
         </body>
     </html>

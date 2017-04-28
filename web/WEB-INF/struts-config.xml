@@ -69,6 +69,10 @@
                 type="com.myapp.struts.returnMovieAction">
             <forward name="success" path="/customerRentals.jsp" />
         </action>
+        <action name="form" path="/pay" scope="request" type="com.myapp.struts.payAction" validate="false">
+            <forward name="success" path="/paymentSuccess.jsp"/>
+            <forward name="failure" path="/payment.jsp"/>
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

@@ -29,6 +29,85 @@ public class form extends ActionForm{
     String wishListId;
     String checkOutId;
     String rentalId;
+    String name;
+    String number;
+    String year;
+    String month;
+    
+    String errorNumber;
+    String errorName;
+    String errorYear;
+    String errorMonth;
+
+    public String getErrorName() {
+        return errorName;
+    }
+
+    public void setErrorName() {
+        this.errorName = 
+                "<span style='color:red'>Please provide valid name</span>";
+    }
+
+    public String getErrorNumber() {
+        return errorNumber;
+    }
+
+    public void setErrorNumber() {
+        this.errorNumber = 
+                "<span style='color:red'>Please provide valid card number</span>";
+    }
+
+    public String getErrorYear() {
+        return errorYear;
+    }
+
+    public void setErrorYear( ) {
+        this.errorYear = 
+                "<span style='color:red'>Please provide valid expiration date</span>";
+    }
+
+    public String getErrorMonth() {
+        return errorMonth;
+    }
+
+    public void setErrorMonth() {
+        this.errorMonth = 
+                "<span style='color:red'>Please provide valid month</span>";
+    }
+
+    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
 
     public String getRentalId() {
         return rentalId;
