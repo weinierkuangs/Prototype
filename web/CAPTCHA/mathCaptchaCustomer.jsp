@@ -12,7 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Math Capcha</title>
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <title>Math Captcha</title>
     </head>
     <body>
         <h1>Are you a robot?</h1>
