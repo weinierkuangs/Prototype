@@ -40,6 +40,34 @@ public class form extends ActionForm{
     String errorMonth;
     String errorPassword;
     String errorEmail;
+    String errorCaptcha;
+
+
+    public String getErrorCaptcha() {
+        return errorCaptcha;
+    }
+
+    public void setErrorCaptcha(String errorCaptcha) {
+        this.errorCaptcha = 
+                "<span style='color:red'>Wrong Answer</span>";
+    }
+    public String getCaptcha() {
+        return captcha;
+    }
+
+    public void setCaptcha(String captcha) {
+        this.captcha = captcha;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+    String captcha;
+    String answer;
 
     public String getErrorPassword() {
         return errorPassword;

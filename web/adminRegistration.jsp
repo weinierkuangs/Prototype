@@ -12,7 +12,7 @@
         <title>New Staff Registration</title>
     </head>
     <body>
-        New Staff: <br><br>
+        <h1>New Staff: </h1>
         <html:html>
             <html:form action="/adminRegistration.jsp" method="get">
                 <bean:write name="form" property="errorName" filter="false"/><br><br>
@@ -32,7 +32,7 @@
                     <br><br>
             </html:form>
         </html:html>
-        <a href="customerLogin.jsp"><button>Go To Admin Login</button></a>
+        <a href="adminLogin.jsp"><button>Go To Admin Login</button></a>
 
     </body>
 </html:html>

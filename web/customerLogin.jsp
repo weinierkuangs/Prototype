@@ -25,7 +25,7 @@
                     <br><br>
             </html:form>
         </html:html>
-        <a href="customerRegistration.jsp"><button>Register</button></a><br><br>
+        <a href="CAPTCHA/mathCaptchaCustomer.jsp"><button>Register</button></a><br><br>
         <a href="adminLogin.jsp"><button>Go To Admin Login</button></a>
         </div>
     </body>

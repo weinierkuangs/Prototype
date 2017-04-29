@@ -74,6 +74,16 @@
             <forward name="success" path="/paymentSuccess.jsp"/>
             <forward name="failure" path="/payment.jsp"/>
         </action>
+        <action input="/CAPTCHA/mathCaptcha.jsp"  name="form" path="/captcha"
+                type="com.myapp.struts.captchaAction">
+            <forward name="success" path="/adminRegistration.jsp" />
+            <forward name="failure" path="/CAPTCHA/mathCaptcha.jsp" />
+        </action>
+        <action input="/CAPTCHA/mathCaptcha.jsp"  name="form" path="/captchaCustomer"
+                type="com.myapp.struts.captchaAction">
+            <forward name="success" path="/customerRegistration.jsp" />
+            <forward name="failure" path="/CAPTCHA/mathCaptcha.jsp" />
+        </action>
     </action-mappings>
     
     <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>

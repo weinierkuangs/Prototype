@@ -12,7 +12,6 @@
         <title>New Customer Registration</title>
     </head>
     <body>
-        <br><br>
         <h1>New Customer</h1>
         <html:html>
             <html:form action="/customerRegistration.jsp" method="get">
