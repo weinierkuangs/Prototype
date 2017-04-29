@@ -30,10 +30,28 @@ public class adminRegistrationAction extends Action {
         String password = adminRegistration.getAdminPassword();
         String firstName = adminRegistration.getAdminFirstName();
         String lastName = adminRegistration.getAdminLastName();
+        int errorIndicator = 0;
 
-        DAO dao = new DAO();
-        dao.adminRegistration(email, password, firstName, lastName);
-        
-        return mapping.findForward("success");
+        if (firstName == null || firstName.equals("")
+                || lastName == null || lastName.equals("")) {
+            adminRegistration.setErrorName();
+            errorIndicator = 1;
+        }
+        if (password == null || password.equals("")) {
+            adminRegistration.setErrorPassword(password);
+            errorIndicator = 1;
+        }
+        if (email == null || email.equals("") || email.length() <= 16 || !"@sakilastaff.com".equals(email.substring(email.length() - 16))) {
+            adminRegistration.setErrorEmail(email);
+            errorIndicator = 1;
+        }
+
+        if (errorIndicator == 1) {
+            return mapping.findForward("failure");
+        } else {
+            DAO dao = new DAO();
+            dao.adminRegistration(email, password, firstName, lastName);
+            return mapping.findForward("success");
+        }
     }
 }

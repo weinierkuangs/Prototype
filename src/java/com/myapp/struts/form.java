@@ -38,6 +38,26 @@ public class form extends ActionForm{
     String errorName;
     String errorYear;
     String errorMonth;
+    String errorPassword;
+    String errorEmail;
+
+    public String getErrorPassword() {
+        return errorPassword;
+    }
+
+    public void setErrorPassword(String errorPassword) {
+        this.errorPassword = 
+                "<span style='color:red'>You can not leave password blank</span>";
+    }
+
+    public String getErrorEmail() {
+        return errorEmail;
+    }
+
+    public void setErrorEmail(String errorEmail) {
+        this.errorEmail = 
+                "<span style='color:red'>Please provide an authorized email</span>";
+    }
 
     public String getErrorName() {
         return errorName;

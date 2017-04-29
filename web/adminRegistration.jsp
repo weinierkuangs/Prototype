@@ -15,15 +15,19 @@
         New Staff: <br><br>
         <html:html>
             <html:form action="/adminRegistration.jsp" method="get">
+                <bean:write name="form" property="errorName" filter="false"/><br><br>
                 Enter your First Name:
                 <html:text property="adminFirstName" value=""/><br><br>
+                <bean:write name="form" property="errorName" filter="false"/><br><br>
                 Enter your Last Name:
                 <html:text property="adminLastName" value=""/><br><br>
+                <bean:write name="form" property="errorEmail" filter="false"/><br><br>
                 Enter your Email:
                 <html:text property="adminEmail" value=""/><br><br>
+                <bean:write name="form" property="errorPassword" filter="false"/><br><br>
                 Enter your Password:
                 <html:text property="adminPassword" value=""/><br><br>
-                
+
                 <html:submit>Register</html:submit>
                     <br><br>
             </html:form>

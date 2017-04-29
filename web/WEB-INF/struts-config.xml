@@ -31,6 +31,7 @@
         <action input="/adminRegistration.jsp" name="form" path="/adminRegistration"
                 type="com.myapp.struts.adminRegistrationAction">
             <forward name="success" path="/registrationSuccess.jsp" />
+            <forward name="failure" path="/adminRegistration.jsp" />
         </action>
         <action input="/customerRegistration.jsp" name="form" path="/customerRegistration"
                 type="com.myapp.struts.customerRegistrationAction">
