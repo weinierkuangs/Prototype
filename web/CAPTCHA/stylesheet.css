@@ -130,13 +130,6 @@ input[type=button], input[type=submit], input[type=reset] {
     cursor: pointer;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover,
-input[type=button]:focus, input[type=submit]:focus, input[type=reset]:focus,
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active{
-    background-color: #B80000;
-    font-style: italic;    
-}
-
 button {
     background-color: #FF0000; 
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
@@ -152,7 +145,11 @@ button {
     cursor: pointer;
 }
 
-button:hover, button:focus, button:active {
-    background-color: #B80000;
-    font-style: italic;
+button:hover, a:focus, a:active {
+  font-style: italic;
+  background-color: #B80000;
+}
+
+button:visited { 
+    text-decoration: none; 
 }

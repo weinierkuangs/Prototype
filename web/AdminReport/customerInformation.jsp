@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Customer Information (Active)</title>
     </head>
     <body>
@@ -18,7 +19,7 @@
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="yujie-1276" />
+                           user="root" password="root" />
         <sql:query dataSource="${snapshot}" var="result">
             SELECT c.first_name, c.last_name, c.email, a.phone, a.address, city.city, a.district, a.postal_code, country.country, c.store_id
             FROM customer as c

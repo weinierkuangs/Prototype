@@ -18,7 +18,7 @@
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="yujie-1276" />
+                           user="root" password="root" />
         <sql:query dataSource="${snapshot}" var="result">
             select YEAR(payment_date) as 'Year', MONTH(payment_date) as 'Month', SUM(amount) as 'Total_Revenue' from payment GROUP BY MONTH(payment_date),YEAR(payment_date) ORDER BY 'Year', 'Month'
         </sql:query>

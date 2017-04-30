@@ -10,22 +10,26 @@
 <html:html lang="true">
     <head>
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Customer Search Page</title>
     </head>
     <body>
-
-        Search:
+        <hr>
+        <h1>Search</h1>
         <html:form action="/customerSearch" method="get">
             <html:text style="display: none" property="filmId" size="10"/>
             Enter the Title to search:
-            <html:text property="title" size="20"/><br><br>
+            <br><br>
+            <html:text property="title" size="20"/>
             Enter the Category to search:
-            <html:text property="category" size="10"/><br><br>
+            <br><br>
+            <html:text property="category" size="10"/>
             Enter the Actor to search:
-            <html:text property="actor" size="10"/><br><br>
+            <br><br>
+            <html:text property="actor" size="10"/>
             <html:submit>Search</html:submit>
-                <br><br>
         </html:form>
+        <br><br>
 
 
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
@@ -34,7 +38,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description
@@ -79,6 +83,5 @@
                 </tr>
             </c:forEach>
         </table>
-
     </body>
 </html:html>

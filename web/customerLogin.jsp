@@ -9,22 +9,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Customer Login</title>
     </head>
     <body>
         <div>
-        <h1>Customer Login:</h1>
-        <br><br>
+            <hr>
+            <h1>Customer Login</h1>
+            <br><br>
         <html:html>
             <html:form action="/customerLogin" method="get">
                 Enter your Email Address:
+                <br></br>
                 <html:text property="customerEmail" value=""/><br><br>
                 Enter your Password:
+                <br></br>
                 <html:text property="customerPassword" value=""/><br><br>
                 <html:submit>Login</html:submit>
-                    <br><br>
             </html:form>
         </html:html>
+        <br><br>
         <a href="CAPTCHA/mathCaptchaCustomer.jsp"><button>Register</button></a><br><br>
         <a href="adminLogin.jsp"><button>Go To Admin Login</button></a>
         </div>

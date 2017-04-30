@@ -17,15 +17,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Wish List</title>
     </head>
     <body>
+        <br></br>
         <h1>Your Wish List</h1>
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id,wish_list.wish_list_id, film.title, wish_list.last_update as 'Time Added'FROM wish_list
@@ -59,6 +61,5 @@
                 </tr>
             </c:forEach>
         </table>
-    </body>
-    
+    </body>    
 </html>

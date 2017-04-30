@@ -12,9 +12,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Payment</title>
     </head>
     <body>
+        <hr>
         <html:form action="/pay">
             <table border="0">
                 <tbody>

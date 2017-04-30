@@ -10,9 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Success</title>
     </head>
     <body>
+        <hr>
         <h1>Registration is done.</h1>
         
         <a href="customerLogin.jsp"><button>Go To Customer Login</button></a>

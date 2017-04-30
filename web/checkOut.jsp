@@ -10,25 +10,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">       
+        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Check Out Cart</title>
     </head>
     <body>
+        <hr>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from customer where customer_id = <%=session.getAttribute("customerId")%>
         </sql:query>
         <c:forEach var="row" items="${result.rows}">
-            <h1>Welcome back ${row.first_name} ${row.last_name}!</h1>
+            <h1>Welcome back, ${row.first_name} ${row.last_name}!</h1>
         </c:forEach>
-        <h1>Your Cart</h1>
+        <h2>Your Cart</h2>
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             Select check_out.check_out_id, film.title
@@ -54,11 +56,8 @@
                 </tr>
             </c:forEach>
         </table>
-
-
         <html:form action="/checkOut" method="get">
             <html:submit>Check Out All</html:submit>
         </html:form><br><br>
     </body>
-
 </html>
