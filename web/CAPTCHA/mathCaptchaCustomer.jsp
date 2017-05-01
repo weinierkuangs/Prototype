@@ -16,10 +16,14 @@
         <title>Math Captcha</title>
     </head>
     <body>
-        <h1>Are you a robot?</h1>
+        <div id="navbar">
+            <a href="${pageContext.request.contextPath}/customerLogin.jsp">
+                <img src="crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
-        <h3><bean:write name="form" property="errorCaptcha" filter="false"/></h3>
-        <h2>
+        <h1>Are you a robot?</h1>
+        <h2><bean:write name="form" property="errorCaptcha" filter="false"/>
         <%! int num_x = (int) (Math.random() * 10);
             int num_y = (int) (Math.random() * 10);
             int num_a = num_x + num_y;

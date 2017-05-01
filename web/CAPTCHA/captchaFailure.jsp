@@ -13,6 +13,12 @@
         <title>Wrong</title>
     </head>
     <body>
+        <div id="navbar">
+           <a href="customerLogin.jsp">
+                <img src="crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+         </div>
+        <hr>
         <p>Wrong Answer!</p>
     </body>
 </html>
