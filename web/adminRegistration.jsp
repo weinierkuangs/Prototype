@@ -9,28 +9,32 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>New Staff Registration</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="customerMain.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
         <h1>New Staff</h1>
         <br></br>
         <html:html>
             <html:form action="/adminRegistration.jsp" method="get">
-                <bean:write name="form" property="errorName" filter="false"/><br><br>
+                <strong><bean:write name="form" property="errorName" filter="false"/></strong>
                 Enter your First Name:
                 <br></br>
                 <html:text property="adminFirstName" value=""/><br><br>
-                <bean:write name="form" property="errorName" filter="false"/><br><br>
+                <strong><bean:write name="form" property="errorName" filter="false"/></strong>
                 Enter your Last Name:
                 <br></br>
                 <html:text property="adminLastName" value=""/><br><br>
-                <bean:write name="form" property="errorEmail" filter="false"/><br><br>
+                <strong><bean:write name="form" property="errorEmail" filter="false"/></strong>
                 Enter your Email:
                 <br></br>
                 <html:text property="adminEmail" value=""/><br><br>
-                <bean:write name="form" property="errorPassword" filter="false"/><br><br>
+                <strong><bean:write name="form" property="errorPassword" filter="false"/></strong>
                 Enter your Password:
                 <br></br>
                 <html:text property="adminPassword" value=""/><br><br>

@@ -10,10 +10,14 @@
 <html:html lang="true">
     <head>
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Admin Search Page</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="adminMain.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
         <div style="width: 60%;"
         <h1>Search</h1>
@@ -38,7 +42,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description
