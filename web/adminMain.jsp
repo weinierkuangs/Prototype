@@ -15,33 +15,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
-        <title>Admin Main Page</title>
-    </head>
-    <body>
-        <hr>
-        <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-                           url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
-        <sql:query dataSource="${snapshot}" var="result">
-            SELECT * from staff where staff_id = <%=session.getAttribute("staffId")%>
-        </sql:query>
-        <c:forEach var="row" items="${result.rows}">
-            <h1>Welcome back ${row.first_name} ${row.last_name}!</h1>
-        </c:forEach>
-            <br></br>
-            <h2>Reports:</h2>
-        <a href="AdminReport/customerInformation.jsp"><button>Customer Information</button></a><br><br>
-        <a href="AdminReport/mostPopularCategories.jsp"><button>Most Popular Categories</button></a><br><br>
-        <a href="AdminReport/revenue.jsp"><button>Revenue</button></a><br><br>
-        <a href="AdminReport/sales.jsp"><button>Sales</button></a><br><br>
-        <a href="AdminReport/checkouts.jsp"><button>Current Checkouts</button></a><br><br>
-        <a href="AdminReport/inventory.jsp"><button>Inventory</button></a><br><br>
+    <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+    <title>Admin Main Page</title>
+</head>
+<body>
+    <hr>
+    <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
+                       url="jdbc:mysql://localhost:3306/sakila"
+                       user="root"  password="yujie-1276"/>
+    <sql:query dataSource="${snapshot}" var="result">
+        SELECT * from staff where staff_id = <%=session.getAttribute("staffId")%>
+    </sql:query>
+    <c:forEach var="row" items="${result.rows}">
+        <h1>Welcome back ${row.first_name} ${row.last_name}!</h1>
+    </c:forEach>
+    <br></br>
+    <h2>Reports:</h2>
+    <a href="AdminReport/customerInformation.jsp"><button>Customer Information</button></a><br><br>
+    <a href="AdminReport/mostPopularCategories.jsp"><button>Most Popular Categories</button></a><br><br>
+    <a href="AdminReport/revenue.jsp"><button>Revenue</button></a><br><br>
+    <a href="AdminReport/sales.jsp"><button>Sales</button></a><br><br>
+    <a href="AdminReport/checkouts.jsp"><button>Current Checkouts</button></a><br><br>
+    <a href="AdminReport/inventory.jsp"><button>Inventory</button></a><br><br>
 
-        <a href="adminSearch.jsp"><button>Search</button></a><br><br>
-        
-        <a href="adminLogin.jsp"><button>Log Out</button></a><br><br>
+    <a href="adminSearch.jsp"><button>Search</button></a><br><br>
+
+    <h2>Action:</h2>
+    <a href="adminLogin.jsp"><button>Log Out</button></a><br><br>
 
 
-    </body>
+</body>
 </html>

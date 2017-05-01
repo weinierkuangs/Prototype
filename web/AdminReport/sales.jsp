@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <title>Revenue</title>
+        <title>Sales</title>
     </head>
     <body>
         <h1>Revenue</h1>
@@ -20,19 +20,17 @@
                            url="jdbc:mysql://localhost:3306/sakila"
                            user="root" password="yujie-1276" />
         <sql:query dataSource="${snapshot}" var="result">
-            select YEAR(payment_date) as 'Year', MONTH(payment_date) as 'Month', SUM(amount) as 'Total_Revenue' from payment GROUP BY MONTH(payment_date),YEAR(payment_date) ORDER BY 'Year', 'Month'
+            SELECT * FROM sales_by_film_category LIMIT 1000;
         </sql:query>
         <table border="0">
             <tr>
-                <th>Year</th>
-                <th>Month</th>
-                <th>Total Revenue ($)</th>
+                <th>Category</th>
+                <th>Total Sales ($)</th>
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td><c:out value="${row.Year}"/></td>   
-                    <td><c:out value="${row.Month}"/></td>
-                    <td><c:out value="${row.Total_Revenue}"/></td>
+                    <td><c:out value="${row.category}"/></td>
+                    <td><c:out value="${row.total_sales}"/></td>
                 </tr>
             </c:forEach>
         </table>

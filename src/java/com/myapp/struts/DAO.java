@@ -236,4 +236,14 @@ public class DAO {
                 .executeUpdate("update rental set return_date = NOW() where rental_id =" + rentalId);
         con.close();
     }
+    public void newStore(String staffId) throws Exception {
+
+        String URL = "jdbc:mysql://localhost:3306/sakila";
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection(URL, "root", "yujie-1276");
+        Statement st = con.createStatement();
+        int value = st
+                .executeUpdate("");
+        con.close();
+    }
 }

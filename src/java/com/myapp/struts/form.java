@@ -33,6 +33,7 @@ public class form extends ActionForm{
     String number;
     String year;
     String month;
+    String staffId;
     
     String errorNumber;
     String errorName;
@@ -41,6 +42,14 @@ public class form extends ActionForm{
     String errorPassword;
     String errorEmail;
     String errorCaptcha;
+
+    public String getStaffId() {
+        return staffId;
+    }
+
+    public void setStaffId(String staffId) {
+        this.staffId = staffId;
+    }
 
 
     public String getErrorCaptcha() {
