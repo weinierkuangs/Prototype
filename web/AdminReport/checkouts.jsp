@@ -19,7 +19,7 @@
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root" password="root" />
+                           user="root" password="yujie-1276" />
         <sql:query dataSource="${snapshot}" var="result">
             SELECT f.title, c.first_name, c.last_name, c.email, f.rental_rate, f.replacement_cost, i.store_id 
             FROM rental as r

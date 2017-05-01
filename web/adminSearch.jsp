@@ -15,6 +15,7 @@
     </head>
     <body>
         <hr>
+        <div style="width: 60%;"
         <h1>Search</h1>
         <html:form action="/adminSearch" method="get">
             Enter the Film ID to search:
@@ -37,7 +38,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description

@@ -15,21 +15,25 @@
     </head>
     <body>
         <hr>
+        <div style="width: 60%;">
         <h1>Search</h1>
         <html:form action="/customerSearch" method="get">
             <html:text style="display: none" property="filmId" size="10"/>
             Enter the Title to search:
             <br><br>
             <html:text property="title" size="20"/>
+            <br><br>
             Enter the Category to search:
             <br><br>
             <html:text property="category" size="10"/>
+            <br><br>
             Enter the Actor to search:
             <br><br>
             <html:text property="actor" size="10"/>
+            <br><br>
             <html:submit>Search</html:submit>
         </html:form>
-        <br><br>
+        <br><br></div>
 
 
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
@@ -38,7 +42,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id, film.title, category.name, actor.first_name, film.description

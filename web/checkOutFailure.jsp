@@ -24,7 +24,7 @@
         <br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from error_msg where error_id = <%=session.getAttribute("errorId")%>
         </sql:query>

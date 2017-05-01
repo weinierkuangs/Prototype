@@ -18,7 +18,7 @@
         <hr>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from customer where customer_id = <%=session.getAttribute("customerId")%>
         </sql:query>
@@ -30,7 +30,7 @@
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             Select check_out.check_out_id, film.title

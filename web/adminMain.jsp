@@ -22,7 +22,7 @@
         <hr>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="root"/>
+                           user="root"  password="yujie-1276"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from staff where staff_id = <%=session.getAttribute("staffId")%>
         </sql:query>
@@ -34,6 +34,7 @@
         <a href="AdminReport/customerInformation.jsp"><button>Customer Information</button></a><br><br>
         <a href="AdminReport/mostPopularCategories.jsp"><button>Most Popular Categories</button></a><br><br>
         <a href="AdminReport/revenue.jsp"><button>Revenue</button></a><br><br>
+        <a href="AdminReport/sales.jsp"><button>Sales</button></a><br><br>
         <a href="AdminReport/checkouts.jsp"><button>Current Checkouts</button></a><br><br>
         <a href="AdminReport/inventory.jsp"><button>Inventory</button></a><br><br>
 
