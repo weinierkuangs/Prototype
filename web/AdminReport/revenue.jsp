@@ -14,6 +14,12 @@
         <title>Revenue</title>
     </head>
     <body>
+        <div id="navbar">
+           <a href="${pageContext.request.contextPath}/adminMain.jsp">
+             <img src="crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
+        <hr>
         <h1>Revenue</h1>
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
