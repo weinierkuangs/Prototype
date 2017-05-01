@@ -9,27 +9,34 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>New Customer Registration</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="customerLogin.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
         <h1>New Customer</h1>
         <html:html>
             <html:form action="/customerRegistration.jsp" method="get">
+                <strong><bean:write name="form" property="errorName" filter="false"/></strong>
                 Enter your First Name:
-                <br><br>
-                <html:text property="customerFirstName" value=""/>
+                <br></br>
+                <html:text property="customerFirstName" value=""/><br></br>
+                <strong><bean:write name="form" property="errorName" filter="false"/></strong>
                 Enter your Last Name:
-                <br><br>
-                <html:text property="customerLastName" value=""/>
+                <br></br>
+                <html:text property="customerLastName" value=""/><br><br>
+                <strong><bean:write name="form" property="errorEmail" filter="false"/></strong>
                 Enter your Email:
-                <br><br>
-                <html:text property="customerEmail" value=""/>
+                <br></br>
+                <html:text property="customerEmail" value=""/><br><br>
+                <strong><bean:write name="form" property="errorPassword" filter="false"/></strong>
                 Enter your Password:
-                <br><br>
-                <html:text property="customerPassword" value=""/>
-                <br><br>
+                <br></br>
+                <html:text property="customerPassword" value=""/><br><br>
                 <html:submit>Register</html:submit>
             </html:form>
         </html:html>

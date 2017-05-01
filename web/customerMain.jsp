@@ -3,7 +3,6 @@
     Created on : Apr 23, 2017, 1:21:03 AM
     Author     : jyu43
 --%>
-
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -21,6 +20,11 @@
     <title>Customer Main Page</title>
 </head>
 <body>
+    <div id="navbar">
+        <a href="customerMain.jsp">
+            <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+        </a>
+    </div>
     <hr>
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                        url="jdbc:mysql://localhost:3306/sakila"
@@ -130,4 +134,24 @@
         </c:forEach>
     </table>
 </body>
+<footer>
+        <div id="foot">
+            <hr>
+            <p>
+                Contact us at ✆ <a href="tel:205-348-0538">(205)348-0538</a> or ✉ <a href="mailto:videostore@crimson.ua.edu">videostore@crimson.ua.edu</a>.
+                <br><br>
+                <u>Spring 2017 Stores Hours:</u> 
+                <br>
+                Monday-Thursday 12:00PM-8:00PM
+                <br>                
+                Friday-Sunday 10AM-10:00PM
+                <br><br>
+                While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. 
+                <br>
+                Copyright © 2003-2017 Crimson Video Store. All Rights Reserved. Powered by Crimson Video Store.
+            </p>
+        </div>
+    </footer>
 </html>
+
+    
