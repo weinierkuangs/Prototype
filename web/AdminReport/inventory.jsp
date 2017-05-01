@@ -11,10 +11,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Inventory</title>
     </head>
     <body>
+        <div id="navbar">
+           <a href="${pageContext.request.contextPath}/adminMain.jsp">
+             <img src="crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
+        <hr>
         <h1>Current Store Inventory</h1>
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
