@@ -11,26 +11,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">       
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Check Out Cart</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="customerMain.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from customer where customer_id = <%=session.getAttribute("customerId")%>
         </sql:query>
         <c:forEach var="row" items="${result.rows}">
             <h1>Welcome back, ${row.first_name} ${row.last_name}!</h1>
         </c:forEach>
-        <h2>Your Cart</h2>
+        <h1>Your Cart</h1>
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             Select check_out.check_out_id, film.title
@@ -43,7 +47,7 @@
             <tr>
                 <th style="display: none">check_out_id</th>
                 <th>Title</th>
-                <th >Action</th>
+                <th>Action</th>
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
@@ -56,8 +60,27 @@
                 </tr>
             </c:forEach>
         </table>
+        <br><br>
         <html:form action="/checkOut" method="get">
             <html:submit>Check Out All</html:submit>
         </html:form><br><br>
-    </body>
+    </body>    
+    <footer>
+        <div id="foot">
+            <hr>
+            <p>
+                Contact us at ✆ <a href="tel:205-348-0538">(205)348-0538</a> or ✉ <a href="mailto:videostore@crimson.ua.edu">videostore@crimson.ua.edu</a>.
+                <br><br>
+                <u>Spring 2017 Stores Hours:</u> 
+                <br>
+                Monday-Thursday 12:00PM-8:00PM
+                <br>                
+                Friday-Sunday 10AM-10:00PM
+                <br><br>
+                While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. 
+                <br>
+                Copyright © 2003-2017 Crimson Video Store. All Rights Reserved. Powered by Crimson Video Store.
+            </p>
+        </div>
+    </footer>
 </html>

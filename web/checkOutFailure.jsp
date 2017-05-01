@@ -13,18 +13,20 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Error</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="customerMain.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
-        <h1>
-            Errors:
-        </h1>
+        <h1>Errors</h1>
         <br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
         <sql:query dataSource="${snapshot}" var="result">
             SELECT * from error_msg where error_id = <%=session.getAttribute("errorId")%>
         </sql:query>
