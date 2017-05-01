@@ -8,21 +8,48 @@ body {
    line-height: 20px;
    padding: 50px;
    color: #FFFFFF;
-   background: #000000; /* #484043 url(http://i.imgur.com/oj7XiDI.jpg) repeat bottom right; */
+   background: black ;/*url(http://static.allbackgrounds.com/bg/black-pattern.jpg) repeat bottom right; */
    width: 100%;
+}
+img {
+    height:180px;
+    text-align: left;
+}
+
+#navbar {
+    width: 100%;
+    height:180px;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    font-size: 10px;
+    text-align: left;
+}
+
+#foot{
+    width: 100%;
+    height:180px;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    font-size: 10px;
+    text-align: center;
 }
 
 hr { 
     color: white;
+    width: 100%;
 }
 
 h1 {
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+    font-family: Helvetica, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 38px;
     letter-spacing: 1px;
-    color: #FF0000;
+    color: white;
+    text-shadow: 0 0 3px grey, 0 0 5px grey;
     width: 100%;
+    line-height: 40px;
 }
 
 h2 {
@@ -32,51 +59,63 @@ h2 {
     letter-spacing: 1px;
     color: whitesmoke;
     width: 100%;
+    line-height: 40px;
 }
 
 table {
-   width: 100%;
+   width: 90%;
    padding: 10px;
    background-color: #5a5053;
    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
    font-style: normal;
    border-collapse: collapse;
+   border-left: 1px solid black;
+   border-right: 1px solid black;
+}
+
+tr:hover {
+    background-color: #b80000;
 }
 
 tr:nth-child(even) 
 {
-    background-color: #6E6568
+    background-color: #6E6568;
+}
+tr:nth-child(even):hover 
+{
+    background-color: #ff0000;
 }
 
 th {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
     background-color: #FF0000;
-    padding: 20px;
-    color: #EAD3A8;
-    height: 50px;
+    padding: 10px;
+    color: whitesmoke;
+    height: 20px;
     text-align: center;
     vertical-align: central;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid black;
+    text-shadow: 2px 2px black;
 }
 
 td {
     font-weight: normal;
-    font-size: 12px;
+    font-size: 18px;
     padding: 10px;
     text-align: center;
     vertical-align: central;
-    border-bottom: 1px solid #ddd;
 }
 
 a {
-  color: #be7429;
-  text-decoration: none;
+    color: #FF0000;
+    text-decoration: none;
 }
 
 a:hover, a:focus, a:active {
-  font-style: italic;
-  background-color: #B80000;
+    color: white;
+    font-style: italic;
+    background-color: #B80000;
 }
 
 a:visited { 
@@ -116,40 +155,45 @@ input[type=text] {
 }
 
 input[type=button], input[type=submit], input[type=reset] {
-    background-color: #FF0000; 
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+    background-color: #FF0000;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 18px;
     font-weight: bold;
-    font-size: 16px;
+    color:white;
+    padding: 10px 20px;
+    text-align:center;
+    display:inline-block;
+    cursor:pointer;
+    text-shadow: 1px 1px black;
     border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
+}
+
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover,
+input[type=button]:focus, input[type=submit]:focus, input[type=reset]:focus,
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active{
+    font-style: italic;
+    text-shadow: 0 0 3px white, 0 0 5px white;
+    box-shadow:  0 0 1px white, 0 0 5px white;
 }
 
 button {
-    background-color: #FF0000; 
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
-    font-size: 16px;
-    font-weight: bold;    
+    background-color: #FF0000;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:white;
+    padding: 10px 20px;
+    text-align:center;
+    display:inline-block;
+    cursor:pointer;
+    text-shadow: 1px 1px black;
     border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 4px 2px;
-    cursor: pointer;
 }
 
-button:hover, a:focus, a:active {
-  font-style: italic;
-  background-color: #B80000;
-}
 
-button:visited { 
-    text-decoration: none; 
+
+button:hover, button:focus, button:active {
+    font-style: italic;
+    text-shadow: 0 0 3px white, 0 0 5px white;
+    box-shadow:  0 0 1px white, 0 0 5px white;
 }
