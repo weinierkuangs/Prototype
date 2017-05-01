@@ -17,17 +17,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Wish List</title>
     </head>
     <body>
-        <br></br>
+        <div id="navbar">
+            <a href="customerMain.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
+        <hr>
         <h1>Your Wish List</h1>
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT film.film_id,wish_list.wish_list_id, film.title, wish_list.last_update as 'Time Added'FROM wish_list
@@ -61,5 +65,24 @@
                 </tr>
             </c:forEach>
         </table>
+    <br></br>
     </body>    
+        <footer>
+        <div id="foot">
+            <hr>
+            <p>
+                Contact us at ✆ <a href="tel:205-348-0538">(205)348-0538</a> or ✉ <a href="mailto:videostore@crimson.ua.edu">videostore@crimson.ua.edu</a>.
+                <br><br>
+                <u>Spring 2017 Stores Hours:</u> 
+                <br>
+                Monday-Thursday 12:00PM-8:00PM
+                <br>                
+                Friday-Sunday 10AM-10:00PM
+                <br><br>
+                While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. 
+                <br>
+                Copyright © 2003-2017 Crimson Video Store. All Rights Reserved. Powered by Crimson Video Store.
+            </p>
+        </div>
+    </footer>
 </html>

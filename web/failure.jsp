@@ -10,10 +10,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>JSP Page</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="customerLogin.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
         <h1>Unmatched combination of username and password!</h1>
     </body>

@@ -12,11 +12,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="AdminReport\stylesheet.css">
-        <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
         <title>Payment</title>
     </head>
     <body>
+        <div id="navbar">
+            <a href="customerMain.jsp">
+                <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
+            </a>
+        </div>
         <hr>
+        <h1>Payment</h1>
         <html:form action="/pay">
             <table border="0">
                 <tbody>
@@ -58,6 +63,7 @@
                 </tbody>
             </table>
         </html:form>
+        <br></br>
             <a href="customerRentals.jsp"><button>Go Back</button></a><br><br>
     </body>
 </html>
