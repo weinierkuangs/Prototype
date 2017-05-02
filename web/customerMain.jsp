@@ -45,7 +45,7 @@
 
     <h1>You May Like:</h1>
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-                       url="jdbc:mysql://localhost:3308/sakila"
+                       url="jdbc:mysql://localhost:3306/sakila"
                        user="root"  password="root"/>
 
     <sql:query dataSource="${snapshot}" var="result">
@@ -89,7 +89,7 @@
 
     <h1>Current Films to Rent</h1>
     <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-                       url="jdbc:mysql://localhost:3308/sakila"
+                       url="jdbc:mysql://localhost:3306/sakila"
                        user="root"  password="root"/>
 
     <sql:query dataSource="${snapshot}" var="result">
@@ -132,6 +132,7 @@
             </tr>
         </c:forEach>
     </table>
+        <br><br>
 </body>
 <footer>
         <div id="foot">
