@@ -20,7 +20,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Payment</h1>
         <html:form action="/pay">
             <table border="0">

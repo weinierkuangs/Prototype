@@ -25,7 +25,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Your Wish List</h1>
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>
         <a href="customerSearch.jsp"><button>Search</button></a><br><br>
@@ -69,7 +69,7 @@
     </body>    
         <footer>
         <div id="foot">
-            <hr>
+            <hr align="left" width="90%">
             <p>
                 Contact us at ✆ <a href="tel:205-348-0538">(205)348-0538</a> or ✉ <a href="mailto:videostore@crimson.ua.edu">videostore@crimson.ua.edu</a>.
                 <br><br>

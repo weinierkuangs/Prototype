@@ -19,7 +19,7 @@
              <img src="crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Sales</h1>
         <a href="${pageContext.request.contextPath}/adminMain.jsp"><button>Go Back</button></a><br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"

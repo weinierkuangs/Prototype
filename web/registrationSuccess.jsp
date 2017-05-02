@@ -18,7 +18,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Registration is done.</h1>
         
         <a href="customerLogin.jsp"><button>Go To Customer Login</button></a>

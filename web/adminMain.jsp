@@ -23,7 +23,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                        url="jdbc:mysql://localhost:3306/sakila"
                        user="root"  password="root"/>

@@ -17,7 +17,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <div>
             <h1>Customer Login</h1>
             <br>
@@ -40,7 +40,7 @@
     </body>    
     <footer>
         <div id="foot">
-            <hr>
+            <hr align="left" width="90%">
             <p>
                 Contact us at ✆ <a href="tel:205-348-0538">(205)348-0538</a> or ✉ <a href="mailto:videostore@crimson.ua.edu">videostore@crimson.ua.edu</a>.
                 <br><br>

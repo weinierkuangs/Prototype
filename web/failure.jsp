@@ -18,7 +18,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Unmatched combination of username and password!</h1>
     </body>
 </html>

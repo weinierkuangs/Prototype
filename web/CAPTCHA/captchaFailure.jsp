@@ -18,7 +18,7 @@
                 <img src="crimson.png" alt="Crimson Video Store Logo" />
             </a>
          </div>
-        <hr>
+        <hr align="left" width="90%">
         <h2>Wrong Answer!</h2>
     </body>
 </html>

@@ -21,7 +21,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Errors</h1>
         <br><br>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"

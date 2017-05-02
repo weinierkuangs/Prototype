@@ -19,7 +19,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>You have Successfully Checked Out Your Cart!</h1>
 
         <h2>Movies Checked Out:</h2>

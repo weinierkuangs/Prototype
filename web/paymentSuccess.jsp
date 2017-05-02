@@ -18,7 +18,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Thank You for Your Payment!</h1>
 
         <a href="customerMain.jsp"><button>Go Back</button></a><br><br>

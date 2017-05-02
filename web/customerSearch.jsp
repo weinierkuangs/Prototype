@@ -19,7 +19,7 @@
                 <img src="AdminReport\crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <div style="width: 60%;">
         <h1>Search</h1>
         <html:form action="/customerSearch" method="get">

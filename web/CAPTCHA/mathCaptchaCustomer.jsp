@@ -21,7 +21,7 @@
                 <img src="crimson.png" alt="Crimson Video Store Logo" />
             </a>
         </div>
-        <hr>
+        <hr align="left" width="90%">
         <h1>Are you a robot?</h1>
         <h2><bean:write name="form" property="errorCaptcha" filter="false"/>
         <%! int num_x = (int) (Math.random() * 10);
